@@ -17,8 +17,8 @@ const schema = paprschema({
 });
 
 const indexes: IndexDescription[] = [
-  { key: { name: 1 }, unique: true },
-  { key: { phone: 1}, unique: true},
+  { key: { name: 1 } },
+  { key: { phone: 1} },
 ]
 
 export type Role = typeof RoleArray[number];

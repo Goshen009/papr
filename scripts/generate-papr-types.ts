@@ -4,7 +4,7 @@ import { fileURLToPath } from 'node:url';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const schemas_dir = join(__dirname, '../src/schemas');
-const output_file = join(__dirname, '../src/types/papr.generated.d.ts');
+const output_file = join(__dirname, '../src/types/papr.generated.ts');
 
 const generate = async () => {
   const files = await readdir(schemas_dir);

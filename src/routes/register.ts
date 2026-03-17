@@ -1,5 +1,6 @@
 import { FastifyRequest, FastifyReply, FastifyInstance } from "fastify";
 import { z } from "zod/v4";
+import { Content } from '../schemas/posts.js';
 
 const schema = z.object({
   name: z.string(),
@@ -17,16 +18,17 @@ async function handler(
     name, phone, age: 50,
   });
 
+  // @ts-ignore
   const p = await this.papr.posts.insertOne({
      name: 'hi',
-     content: 'hello',
+     content: 'hello' as Content,
      meta: {
         type: 'user',
         username: '',
      },
   });
 
-  const t = await this.papr.posts.findById('');
+  const t = await this.papr.posts.findOne({ name: 'hi' });
   if (t) {
    if (t.meta.type === 'user')
       console.log(t.meta.username);

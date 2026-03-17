@@ -1,5 +1,5 @@
 {
-  "name": "mongoose",
+  "name": "papr",
   "version": "1.0.0",
   "description": "This project was bootstrapped with Fastify-CLI.",
   "main": "app.ts",
@@ -14,7 +14,7 @@
     "watch:ts": "tsc -w",
     "dev": "npm run build:ts && concurrently -k -p \"[{name}]\" -n \"TypeScript,App\" -c \"yellow.bold,cyan.bold\" \"npm:watch:ts\" \"npm:dev:start\"",
     "dev:start": "fastify start --ignore-watch=.ts$ -w -l info -P dist/app.js",
-    "papr:generate": "tsc && tsx scripts/generate-papr-types.ts"
+    "papr:generate": "tsx scripts/generate-papr-types.ts"
   },
   "keywords": [],
   "author": "",
